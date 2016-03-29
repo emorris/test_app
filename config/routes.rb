@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :posts
-  resources :users
+  resources :posts 
+  resources :users 
+  get 'users/large/:id' => 'users#show_large'
   resources :cats
   resources :people
   # The priority is based upon order of creation: first created -> highest priority.

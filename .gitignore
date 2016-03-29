@@ -1,2 +1,8 @@
 
 *.cache
+
+.byebug_history
+
+*.log
+
+*.pid
