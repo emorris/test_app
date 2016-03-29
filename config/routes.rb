@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :users 
   get 'users/large/:id' => 'users#show_large'
   resources :cats
+  namespace :cache_test do
+    get '/:action/:id'
+  end
   resources :people
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

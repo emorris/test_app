@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show_large
-    render json: @user,  serializer: UserShowLargeSerializer, root: false 
+    render json: @user,  serializer: ShowLargeSerializer, root: false 
   end
 
   # GET /users/new
