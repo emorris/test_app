@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :cache_test do
     get '/:action/:id'
   end
+  get '/odd_stuff/*other/:the_end', to: 'cache_test#odd', constraints: { the_end: /[A-Za-z]{4}/ }
   resources :people
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

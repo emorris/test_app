@@ -5,4 +5,8 @@ class CacheTestController < ApplicationController
   def cache2
     render json: ["cache2"]
   end
+
+  def odd
+    render json: params
+  end
 end
