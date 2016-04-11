@@ -6,12 +6,16 @@ Then(/^I should should see "(.*?)"$/) do |arg1|
   expect(page).to have_content(arg1)
 end
 
-
-
 Given(/^that there is a user$/) do
-  pending # express the regexp above with the code you wish you had
+  @user  = create(:user)
 end
 
-Given(/^that user has a post$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^that user has a post as "(.*?)"$/) do |arg1|
+  @post  = create(:post, user: @user ) 
+end
+
+
+Then(/^I should see the post "(.*?)"$/) do |arg1|
+  expect(page).to have_content(@post.title)
+  expect(page).to have_content(@post.body)
 end
