@@ -1,0 +1,2 @@
+module RubyracerHelper
+end
