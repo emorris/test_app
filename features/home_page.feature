@@ -1,3 +1,4 @@
+@selenium
 Feature: Home Page and Stuff
   Background:
     Given that there is a user
