@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     render json: item
   end
 
+
   private
 
   def item_params

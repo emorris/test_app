@@ -3,9 +3,14 @@ require 'rails_helper'
 RSpec.describe ItemsController, type: :controller do
   describe "GET index" do
     it "get all items json" do
-      item = create(:item)
+      items = []
+      5.times do 
+        items.push(create(:item))
+      end
       get :index
-      expect(response.body).to eql({items: [item]}.to_json)
+      expect(JSON.parse(response.body)['items']).to match_array(
+        JSON.parse(items.to_json)
+      )
     end
   end
 
