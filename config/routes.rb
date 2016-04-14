@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :comments
   resources :posts 
   resources :users 
+  resources :items
   get 'users/large/:id' => 'users#show_large'
   resources :cats
   namespace :cache_test do
