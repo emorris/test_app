@@ -1,5 +1,6 @@
 class Cat < ActiveRecord::Base
-
+  belongs_to :person
+  scope :fancy,  ->(){where(color:"gold")}
   def self.one
     limit(1)
   end
