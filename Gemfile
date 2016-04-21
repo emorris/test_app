@@ -36,6 +36,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'traceroute'
 gem 'active_model_serializers'
 gem 'carrierwave'
+gem 'carrierwave_backgrounder'
 gem 'resque'
 group :development, :test do
   gem 'rspec-rails'
