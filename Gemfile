@@ -38,6 +38,7 @@ gem 'active_model_serializers'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'
 gem 'resque'
+gem 'mini_magick'
 group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false

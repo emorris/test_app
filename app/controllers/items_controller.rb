@@ -1,10 +1,14 @@
 class ItemsController < ApplicationController
   def index
-    items = Item.all
-    render json: items
+    @items = Item.all
+    respond_to do |format|
+      format.html
+      format.json {render json: items}
+    end
   end
 
   def new
+    @item = Item.new
   end
 
   def create
@@ -15,11 +19,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.fetch(:item, {name: "test name", price: 6.66 }).permit(:name, :price, :pictur)
+    params.fetch(:item, {name: "test name", price: 6.66 }).permit(:name, :price, :picture)
   end
 end
-<%= form_for @item do |f| %>
-
-<%= f.file_field :picture, multiple: false %>
-<%= f.submit %>
-<% end %>
