@@ -38,7 +38,10 @@ gem 'active_model_serializers'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'
 gem 'resque'
-gem 'resque-web', require: 'resque_web'
+gem 'resque-web'
+gem 'devise'
+gem 'omniauth-twitter'
+
 gem 'mini_magick'
 group :development, :test do
   gem 'rspec-rails'

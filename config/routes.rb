@@ -2,11 +2,14 @@ require "resque_web"
 
 Rails.application.routes.draw do
   mount ResqueWeb::Engine => "/resque_web"
+  devise_for :users
   resources :comments
   resources :posts 
-  resources :users 
+  resources :users do 
+    get '/large/:id' => 'users#show_large'
+  end
   resources :items
-  get 'users/large/:id' => 'users#show_large'
+  resources :people
   resources :cats
 
   namespace :cache_test do
@@ -14,9 +17,7 @@ Rails.application.routes.draw do
   end
   
   get '/odd_stuff/*other/:the_end', to: 'cache_test#odd', constraints: { the_end: /[A-Za-z]{4}/ }
-  resources :people
-  
-  get "/rubyrace" => "rubyracer#index"
-  
+  get "/auth/:provider/callback" => "sessions#create"
+  get "/signout" => "sessions#destroy", :as => :signout
   root 'home#index'
 end
