@@ -22,7 +22,14 @@ class User < ActiveRecord::Base
     user
   end
 
+  private
   def self.create_twiiter_user(auth)
-    byebug
+    user = User.new()
+    user.name = auth.info.name
+    user.email =  auth.info.email ? auth.info.email : "#{auth.info.screen_name}.name@twitter.com"
+    user.provider = auth.provider
+    user.uid = auth.uid
+    user.password = SecureRandom.urlsafe_base64
+    user.save
   end
 end
