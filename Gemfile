@@ -41,6 +41,7 @@ gem 'resque'
 gem 'resque-web'
 gem 'devise'
 gem 'omniauth-twitter'
+gem 'activerecord-import'
 
 gem 'mini_magick'
 group :development, :test do
