@@ -21,5 +21,6 @@ Then(/^I should see the post "(.*?)"$/) do |arg1|
 end
 
 Given(/^that get_title method is stub to "(.*?)"$/) do |arg1|
-  HomeController.any_instance.should_receive(:get_title).and_return(arg1)
+  HomeController.any_instance.stub(:get_title)
+  HomeController.stub('@title').and_return(arg1)
 end
